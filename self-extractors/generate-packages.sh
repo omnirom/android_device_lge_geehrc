@@ -43,8 +43,8 @@ then
   ZIP=occam-ota-737497
   BUILD=jwr66v
 fi # jb-mr2-dev
-ROOTDEVICE=mako
-DEVICE=mako
+ROOTDEVICE=geeb
+DEVICE=geeb
 MANUFACTURER=lge
 
 for COMPANY in broadcom lge qcom

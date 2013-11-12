@@ -1,0 +1,11 @@
+#!/system/bin/sh
+
+# No path is set up at this point so we have to do it here.
+PATH=/sbin:/system/sbin:/system/bin:/system/xbin
+export PATH
+
+BASE_BAND=`getprop gsm.version.baseband`
+
+if [ -z "$BASE_BAND" ]; then
+  setprop gsm.version.baseband `strings /firmware/image/dsp2.mbn| grep 9615A-C | tail -1`
+fi

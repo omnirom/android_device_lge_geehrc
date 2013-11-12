@@ -27,12 +27,14 @@ TARGET_MPDECISION_BOOST_SOCKET := /dev/socket/mpdecision/touchboost
 
 TARGET_NO_BOOTLOADER := true
 
-TARGET_PREBUILT_KERNEL := device/lge/mako-kernel/kernel
+TARGET_PREBUILT_KERNEL := device/lge/geeb-kernel/kernel
 
 BOARD_KERNEL_BASE := 0x80200000
 BOARD_KERNEL_PAGESIZE := 2048
-BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.hardware=mako lpj=67677 user_debug=31
+BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.hardware=geeb lpj=67677 user_debug=31
 BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x01600000
+
+TARGET_OTA_ASSERT_DEVICE := mako,geeb,gee_a,3970,gee,geebus
 
 BOARD_USES_ALSA_AUDIO:= true
 BOARD_USES_LEGACY_ALSA_AUDIO:= false
@@ -45,11 +47,11 @@ BLUETOOTH_HCI_USE_MCT := true
 
 TARGET_NO_RADIOIMAGE := true
 TARGET_BOARD_PLATFORM := msm8960
-TARGET_BOOTLOADER_BOARD_NAME := MAKO
-TARGET_BOOTLOADER_NAME=mako
-TARGET_BOARD_INFO_FILE := device/lge/mako/board-info.txt
+TARGET_BOOTLOADER_BOARD_NAME := GEE
+TARGET_BOOTLOADER_NAME=gee
+TARGET_BOARD_INFO_FILE := device/lge/geeb/board-info.txt
 
-BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/lge/mako/bluetooth
+BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/lge/geeb/bluetooth
 
 # FIXME: HOSTAPD-derived wifi driver
 BOARD_HAS_QCOM_WLAN := true
@@ -62,7 +64,7 @@ BOARD_HOSTAPD_PRIVATE_LIB := lib_driver_cmd_$(BOARD_WLAN_DEVICE)
 WIFI_DRIVER_FW_PATH_STA := "sta"
 WIFI_DRIVER_FW_PATH_AP  := "ap"
 
-BOARD_EGL_CFG := device/lge/mako/egl.cfg
+BOARD_EGL_CFG := device/lge/geeb/egl.cfg
 
 #BOARD_USES_HGL := true
 #BOARD_USES_OVERLAY := true
@@ -73,9 +75,10 @@ TARGET_USES_SF_BYPASS := true
 TARGET_USES_C2D_COMPOSITON := true
 
 TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
-TARGET_RECOVERY_UI_LIB := librecovery_ui_mako
+TARGET_RECOVERY_UI_LIB := librecovery_ui_geeb
 
-TARGET_RECOVERY_FSTAB = device/lge/mako/fstab.mako
+TARGET_RECOVERY_FSTAB = device/lge/geeb/fstab.geeb
+RECOVERY_FSTAB_VERSION = 2
 TARGET_USERIMAGES_USE_EXT4 := true
 BOARD_BOOTIMAGE_PARTITION_SIZE := 23068672 # 22M
 BOARD_RECOVERYIMAGE_PARTITION_SIZE := 23068672 # 22M
@@ -89,16 +92,16 @@ BOARD_USES_SECURE_SERVICES := true
 BOARD_USES_EXTRA_THERMAL_SENSOR := true
 BOARD_USES_CAMERA_FAST_AUTOFOCUS := true
 
-BOARD_HAL_STATIC_LIBRARIES := libdumpstate.mako
+BOARD_HAL_STATIC_LIBRARIES := libdumpstate.geeb
 
 BOARD_VENDOR_QCOM_GPS_LOC_API_HARDWARE := $(TARGET_BOARD_PLATFORM)
 TARGET_PROVIDES_GPS_LOC_API := true
 TARGET_NO_RPC := true
 
-TARGET_RELEASETOOLS_EXTENSIONS := device/lge/mako
+TARGET_RELEASETOOLS_EXTENSIONS := device/lge/geeb
 
 BOARD_SEPOLICY_DIRS := \
-       device/lge/mako/sepolicy
+       device/lge/geeb/sepolicy
 
 BOARD_SEPOLICY_UNION := \
        app.te \
@@ -130,4 +133,4 @@ OVERRIDE_RS_DRIVER := libRSDriver_adreno.so
 
 HAVE_ADRENO_SOURCE:= false
 
--include vendor/lge/mako/BoardConfigVendor.mk
+-include vendor/lge/geeb/BoardConfigVendor.mk

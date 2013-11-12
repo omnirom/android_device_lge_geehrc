@@ -30,13 +30,13 @@ PRODUCT_COPY_FILES := device/sample/etc/apns-full-conf.xml:system/etc/apns-conf.
 # Inherit from the common Open Source product configuration
 $(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base_telephony.mk)
 
-PRODUCT_NAME := full_mako
-PRODUCT_DEVICE := mako
-PRODUCT_BRAND := Android
-PRODUCT_MODEL := AOSP on Mako
+PRODUCT_NAME := full_geeb
+PRODUCT_DEVICE := geeb
+PRODUCT_BRAND := LGE
+PRODUCT_MODEL := LG Optimus G
 PRODUCT_MANUFACTURER := LGE
-PRODUCT_RESTRICT_VENDOR_FILES := true
+PRODUCT_RESTRICT_VENDOR_FILES := false
 
 # Inherit from hardware-specific part of the product configuration
-$(call inherit-product, device/lge/mako/device.mk)
-$(call inherit-product-if-exists, vendor/lge/mako/device-vendor.mk)
+$(call inherit-product, device/lge/geeb/device.mk)
+$(call inherit-product-if-exists, vendor/lge/geeb/geeb-vendor.mk)
