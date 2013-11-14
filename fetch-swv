@@ -4,8 +4,4 @@
 PATH=/sbin:/system/sbin:/system/bin:/system/xbin
 export PATH
 
-BASE_BAND=`getprop gsm.version.baseband`
-
-if [ -z "$BASE_BAND" ]; then
-  setprop gsm.version.baseband `strings /firmware/image/dsp2.mbn| grep 9615A-C | tail -1`
-fi
+setprop gsm.version.baseband `strings /dev/block/platform/msm_sdcc.1/by-name/modem | grep M9615A-C | head -1`
