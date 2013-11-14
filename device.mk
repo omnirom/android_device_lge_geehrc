@@ -96,27 +96,32 @@ PRODUCT_COPY_FILES += \
 	frameworks/native/data/etc/android.hardware.audio.low_latency.xml:system/etc/permissions/android.hardware.audio.low_latency.xml \
 	frameworks/native/data/etc/android.hardware.bluetooth_le.xml:system/etc/permissions/android.hardware.bluetooth_le.xml
 
+# NFC firmware
+PRODUCT_COPY_FILES += \
+        device/lge/geeb/prebuilt/libpn544_fw.so:system/vendor/firmware/libpn544_fw.so
+
 # NFC packages
 PRODUCT_PACKAGES += \
-    nfc_nci.geeb \
-    NfcNci \
+    libnfc \
+    libnfc_jni \
+    Nfc \
     Tag \
     com.android.nfc_extras
 
 # NFCEE access control
-ifeq ($(TARGET_BUILD_VARIANT),user)
+#ifeq ($(TARGET_BUILD_VARIANT),user)
     NFCEE_ACCESS_PATH := device/lge/geeb/nfc/nfcee_access.xml
-else
-    NFCEE_ACCESS_PATH := device/lge/geeb/nfc/nfcee_access_debug.xml
-endif
+#else
+#    NFCEE_ACCESS_PATH := device/lge/geeb/nfc/nfcee_access_debug.xml
+#endif
 
 # NFC access control + feature files + configuration
 PRODUCT_COPY_FILES += \
     $(NFCEE_ACCESS_PATH):system/etc/nfcee_access.xml \
     frameworks/native/data/etc/com.android.nfc_extras.xml:system/etc/permissions/com.android.nfc_extras.xml \
     frameworks/native/data/etc/android.hardware.nfc.xml:system/etc/permissions/android.hardware.nfc.xml \
-    frameworks/native/data/etc/android.hardware.nfc.hce.xml:system/etc/permissions/android.hardware.nfc.hce.xml \
-    device/lge/geeb/nfc/libnfc-brcm.conf:system/etc/libnfc-brcm.conf
+    frameworks/native/date/etc/com.nxp.mifare.xml:system/etc/permissions/com.nxp.mifare.xml \
+    frameworks/native/data/etc/android.hardware.nfc.hce.xml:system/etc/permissions/android.hardware.nfc.hce.xml
 
 PRODUCT_PROPERTY_OVERRIDES += \
 	ro.opengles.version=196608
