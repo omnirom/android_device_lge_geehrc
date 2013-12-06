@@ -1,8 +1,8 @@
 [
  {
-   "repository":   "arcardinal/kernel_msm",
-   "target_path":  "kernel/lge/kernel_msm",
-   "branch":       "jb-geeb-mr2-jss-faux"
+   "repository":   "SlimRoms/geeb",
+   "target_path":  "kernel/lge/geeb",
+   "branch":       "kk4.4"
  },
  {
    "repository":  "SlimRoms/proprietary_vendor_lge",
