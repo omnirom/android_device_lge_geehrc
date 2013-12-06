@@ -27,8 +27,8 @@ TARGET_MPDECISION_BOOST_SOCKET := /dev/socket/mpdecision/touchboost
 
 TARGET_NO_BOOTLOADER := true
 
-TARGET_KERNEL_SOURCE := kernel/lge/kernel_msm
-TARGET_KERNEL_CONFIG := geeb_defconfig
+TARGET_KERNEL_SOURCE := kernel/lge/geeb
+TARGET_KERNEL_CONFIG := slim_geeb_defconfig
 TARGET_KERNEL_CUSTOM_TOOLCHAIN := linaro/bin/arm-linux-gnueabihf-
 
 BOARD_KERNEL_BASE := 0x80200000
