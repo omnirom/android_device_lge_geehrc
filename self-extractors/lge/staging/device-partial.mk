@@ -12,19 +12,12 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# LGE blob(s) necessary for geeb hardware
+# LGE blob(s) necessary for Geeb hardware
 PRODUCT_COPY_FILES := \
-    vendor/lge/geeb/proprietary/DxHDCP.cfg:system/etc/DxHDCP.cfg:lge \
-    vendor/lge/geeb/proprietary/libAKM.so:system/lib/libAKM.so:lge \
-    vendor/lge/geeb/proprietary/libDxHdcp.so:system/lib/libDxHdcp.so:lge \
     vendor/lge/geeb/proprietary/libacdbdata.so:system/lib/libacdbdata.so:lge \
+    vendor/lge/geeb/proprietary/libAKM.so:system/lib/libAKM.so:lge \
     vendor/lge/geeb/proprietary/libcamera_fast_af.so:system/lib/libcamera_fast_af.so:lge \
     vendor/lge/geeb/proprietary/libmorpho_noise_reduction.so:system/lib/libmorpho_noise_reduction.so:lge \
-    vendor/lge/geeb/proprietary/dxhdcp2.b00:system/vendor/firmware/discretix/dxhdcp2.b00:lge \
-    vendor/lge/geeb/proprietary/dxhdcp2.b01:system/vendor/firmware/discretix/dxhdcp2.b01:lge \
-    vendor/lge/geeb/proprietary/dxhdcp2.b02:system/vendor/firmware/discretix/dxhdcp2.b02:lge \
-    vendor/lge/geeb/proprietary/dxhdcp2.b03:system/vendor/firmware/discretix/dxhdcp2.b03:lge \
-    vendor/lge/geeb/proprietary/dxhdcp2.mdt:system/vendor/firmware/discretix/dxhdcp2.mdt:lge \
     vendor/lge/geeb/proprietary/keymaster.b00:system/vendor/firmware/keymaster/keymaster.b00:lge \
     vendor/lge/geeb/proprietary/keymaster.b01:system/vendor/firmware/keymaster/keymaster.b01:lge \
     vendor/lge/geeb/proprietary/keymaster.b02:system/vendor/firmware/keymaster/keymaster.b02:lge \

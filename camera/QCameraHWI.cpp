@@ -911,7 +911,7 @@ void  QCameraHardwareInterface::processEvent(mm_camera_event_t *event)
     app_notify_cb_t app_cb;
     ALOGV("processEvent: type :%d E",event->event_type);
     if(mPreviewState == QCAMERA_HAL_PREVIEW_STOPPED){
-	ALOGV("Stop recording issued. Return from process Event");
+        ALOGV("Stop recording issued. Return from process Event");
         return;
     }
     memset(&app_cb, 0, sizeof(app_notify_cb_t));
@@ -1232,7 +1232,11 @@ void QCameraHardwareInterface::stopPreview()
             stopPreviewInternal();
             mPreviewState = QCAMERA_HAL_PREVIEW_STOPPED;
             break;
-      case QCAMERA_HAL_TAKE_PICTURE:
+    case QCAMERA_HAL_TAKE_PICTURE:
+        cancelPictureInternal();
+        stopPreviewInternal();
+        mPreviewState = QCAMERA_HAL_PREVIEW_STOPPED;
+        break;
       case QCAMERA_HAL_PREVIEW_STOPPED:
       default:
             break;
@@ -2573,33 +2577,33 @@ int QCameraHardwareInterface::initHeapMem( QCameraHalHeap_t *heap,
 
 int QCameraHardwareInterface::releaseHeapMem( QCameraHalHeap_t *heap)
 {
-	int rc = 0;
-	ALOGV("Release %p", heap);
-	if (heap != NULL) {
+        int rc = 0;
+        ALOGV("Release %p", heap);
+        if (heap != NULL) {
 
-		for (int i = 0; i < heap->buffer_count; i++) {
-			if(heap->camera_memory[i] != NULL) {
-				heap->camera_memory[i]->release( heap->camera_memory[i] );
-				heap->camera_memory[i] = NULL;
-			} else if (heap->fd[i] <= 0) {
-				ALOGE("impossible: amera_memory[%d] = %p, fd = %d",
-				i, heap->camera_memory[i], heap->fd[i]);
-			}
+                for (int i = 0; i < heap->buffer_count; i++) {
+                        if(heap->camera_memory[i] != NULL) {
+                                heap->camera_memory[i]->release( heap->camera_memory[i] );
+                                heap->camera_memory[i] = NULL;
+                        } else if (heap->fd[i] <= 0) {
+                                ALOGE("impossible: amera_memory[%d] = %p, fd = %d",
+                                i, heap->camera_memory[i], heap->fd[i]);
+                        }
 
-			if(heap->fd[i] > 0) {
-				close(heap->fd[i]);
-				heap->fd[i] = -1;
-			}
+                        if(heap->fd[i] > 0) {
+                                close(heap->fd[i]);
+                                heap->fd[i] = -1;
+                        }
 #ifdef USE_ION
             deallocate_ion_memory(heap, i);
 #endif
-		}
+                }
         heap->buffer_count = 0;
         heap->size = 0;
         heap->y_offset = 0;
         heap->cbcr_offset = 0;
-	}
-	return rc;
+        }
+        return rc;
 }
 
 preview_format_info_t  QCameraHardwareInterface::getPreviewFormatInfo( )
