@@ -27,7 +27,7 @@ TARGET_NO_BOOTLOADER := true
 
 TARGET_KERNEL_SOURCE := kernel/lge/geeb
 TARGET_KERNEL_CONFIG := slim_geeb_defconfig
-TARGET_KERNEL_CUSTOM_TOOLCHAIN := linaro-4.8/bin/arm-linux-gnueabihf-
+TARGET_KERNEL_CUSTOM_TOOLCHAIN := linaro-4.8-13.06/bin/arm-linux-gnueabihf-
 
 BOARD_KERNEL_BASE := 0x80200000
 BOARD_KERNEL_PAGESIZE := 2048
