@@ -215,10 +215,6 @@ PRODUCT_PACKAGES += \
         libstagefrighthw \
         libc2dcolorconvert
 
-# Mpdecision init.d script
-PRODUCT_COPY_FILES += \
-    device/lge/hammerhead/01mpdecision:system/etc/init.d/01mpdecision
-
 # GPS configuration
 PRODUCT_COPY_FILES += \
         device/lge/geeb/gps.conf:system/etc/gps.conf
