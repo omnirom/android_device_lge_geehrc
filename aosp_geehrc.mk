@@ -1,4 +1,5 @@
-# Copyright 2013 The Android Open Source Project
+#
+# Copyright 2013 The Android Open-Source Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -11,9 +12,7 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
+#
+$(call inherit-product, device/lge/geehrc/full_geehrc.mk)
 
-# Broadcom blob(s) necessary for geeb hardware
-PRODUCT_COPY_FILES := \
-    vendor/broadcom/geeb/proprietary/bcm2079x_firmware.ncd:system/vendor/firmware/bcm2079x_firmware.ncd:broadcom \
-    vendor/broadcom/geeb/proprietary/bcm2079x_pre_firmware.ncd:system/vendor/firmware/bcm2079x_pre_firmware.ncd:broadcom \
-
+PRODUCT_NAME := aosp_geehrc

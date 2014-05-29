@@ -33,16 +33,15 @@ TARGET_KRAIT_BIONIC_PLDSIZE := 64
 
 TARGET_NO_BOOTLOADER := true
 
-TARGET_KERNEL_SOURCE := kernel/lge/geeb
-TARGET_KERNEL_CONFIG := slim_geeb_defconfig
-TARGET_KERNEL_CUSTOM_TOOLCHAIN := linaro-4.8-13.06/bin/arm-linux-gnueabihf-
+TARGET_KERNEL_SOURCE := kernel/lge/gee
+TARGET_KERNEL_CONFIG := gee_defconfig
 
 BOARD_KERNEL_BASE := 0x80200000
 BOARD_KERNEL_PAGESIZE := 2048
-BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.hardware=geeb lpj=67677 user_debug=31
+BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.hardware=geehrc lpj=67677 user_debug=31
 BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x01600000
 
-TARGET_OTA_ASSERT_DEVICE := mako,geeb,gee_a,e970,gee,geebus,e971,e973
+TARGET_OTA_ASSERT_DEVICE := mako,geeb,gee_a,e970,gee,geebus,e971,e973,e975,geehrc
 
 BOARD_USES_ALSA_AUDIO:= true
 BOARD_USES_LEGACY_ALSA_AUDIO:= false
@@ -57,9 +56,9 @@ TARGET_NO_RADIOIMAGE := true
 TARGET_BOARD_PLATFORM := msm8960
 TARGET_BOOTLOADER_BOARD_NAME := GEE
 TARGET_BOOTLOADER_NAME=gee
-TARGET_BOARD_INFO_FILE := device/lge/geeb/board-info.txt
+TARGET_BOARD_INFO_FILE := device/lge/geehrc/board-info.txt
 
-BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/lge/geeb/bluetooth
+BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/lge/geehrc/bluetooth
 
 # FIXME: HOSTAPD-derived wifi driver
 BOARD_HAS_QCOM_WLAN := true
@@ -72,7 +71,7 @@ BOARD_HOSTAPD_PRIVATE_LIB := lib_driver_cmd_$(BOARD_WLAN_DEVICE)
 WIFI_DRIVER_FW_PATH_STA := "sta"
 WIFI_DRIVER_FW_PATH_AP  := "ap"
 
-BOARD_EGL_CFG := device/lge/geeb/egl.cfg
+BOARD_EGL_CFG := device/lge/geehrc/egl.cfg
 
 #BOARD_USES_HGL := true
 #BOARD_USES_OVERLAY := true
@@ -84,9 +83,9 @@ TARGET_USES_C2D_COMPOSITON := true
 NUM_FRAMEBUFFER_SURFACE_BUFFERS := 3
 
 TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
-TARGET_RECOVERY_UI_LIB := librecovery_ui_geeb
+TARGET_RECOVERY_UI_LIB := librecovery_ui_geehrc
 
-TARGET_RECOVERY_FSTAB = device/lge/geeb/fstab.geeb
+TARGET_RECOVERY_FSTAB = device/lge/geehrc/fstab.geehrc
 RECOVERY_FSTAB_VERSION = 2
 TARGET_USERIMAGES_USE_EXT4 := true
 BOARD_BOOTIMAGE_PARTITION_SIZE := 23068672 # 22M
@@ -101,16 +100,16 @@ BOARD_USES_SECURE_SERVICES := true
 BOARD_USES_EXTRA_THERMAL_SENSOR := true
 BOARD_USES_CAMERA_FAST_AUTOFOCUS := true
 
-BOARD_HAL_STATIC_LIBRARIES := libdumpstate.geeb
+BOARD_HAL_STATIC_LIBRARIES := libdumpstate.geehrc
 
 BOARD_VENDOR_QCOM_GPS_LOC_API_HARDWARE := $(TARGET_BOARD_PLATFORM)
 TARGET_PROVIDES_GPS_LOC_API := true
 TARGET_NO_RPC := true
 
-TARGET_RELEASETOOLS_EXTENSIONS := device/lge/geeb
+TARGET_RELEASETOOLS_EXTENSIONS := device/lge/geehrc
 
 BOARD_SEPOLICY_DIRS := \
-       device/lge/geeb/sepolicy
+       device/lge/geehrc/sepolicy
 
 BOARD_SEPOLICY_UNION := \
        app.te \
@@ -142,4 +141,4 @@ OVERRIDE_RS_DRIVER := libRSDriver_adreno.so
 
 HAVE_ADRENO_SOURCE:= false
 
--include vendor/lge/geeb/BoardConfigVendor.mk
+-include vendor/lge/gee/BoardConfigVendor.mk
