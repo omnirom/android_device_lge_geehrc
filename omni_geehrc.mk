@@ -6,7 +6,7 @@ TARGET_SCREEN_WIDTH := 720
 $(call inherit-product, vendor/omni/config/gsm.mk)
 
 # Inherit some common Omni stuff.
-$(call inherit-product, vendor/slim/config/common.mk)
+$(call inherit-product, vendor/omni/config/common.mk)
 
 # Inherit device configuration
 $(call inherit-product, device/lge/geehrc/full_geehrc.mk)
