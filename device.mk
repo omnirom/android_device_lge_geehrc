@@ -117,10 +117,6 @@ PRODUCT_COPY_FILES += \
         frameworks/native/data/etc/android.hardware.nfc.hce.xml:system/etc/permissions/android.hardware.nfc.hce.xml \
         device/lge/geehrc/nfc/libnfc-brcm.conf:system/etc/libnfc-brcm.conf
 
-# Copy init.d files
-PRODUCT_COPY_FILES += \
-        device/lge/geehrc/01mpdecision:system/etc/init.d/01mpdecision
-
 PRODUCT_PROPERTY_OVERRIDES += \
         ro.opengles.version=196608
 
@@ -187,6 +183,10 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PACKAGES += \
         power.msm8960
+
+# QC Perf for Power HAL
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.vendor.extension_library=/system/lib/libqc-opt.so
 
 PRODUCT_COPY_FILES += \
         device/lge/geehrc/init.geehrc.bt.sh:system/etc/init.geehrc.bt.sh
