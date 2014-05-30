@@ -220,14 +220,6 @@ on post-fs-data
 
     rm /data/local/tmp/adreno_config.txt
 
-    # LED On/Off synchronization
-    chown system system /sys/class/leds/red/device/lock
-
-    chmod 644 /sys/class/leds/button-backlight/brightness
-    chmod 646 /sys/class/leds/red/brightness
-    chmod 646 /sys/class/leds/green/brightness
-    chmod 646 /sys/class/leds/blue/brightness
-
     # Enable vibrate
     chown system system /sys/class/timed_output/vibrator/enable
 
