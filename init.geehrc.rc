@@ -394,9 +394,6 @@ service fuse_usb /system/bin/sdcard -u 1023 -g 1023 /mnt/media_rw/usb /storage/u
     class late_start
     disabled
 
-service thermald /system/bin/thermald
-    class main
-
 service mpdecision /system/bin/mpdecision --no_sleep --avg_comp
     class main
 

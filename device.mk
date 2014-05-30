@@ -52,9 +52,6 @@ PRODUCT_COPY_FILES += \
         device/lge/geehrc/mixer_paths.xml:system/etc/mixer_paths.xml
 
 PRODUCT_COPY_FILES += \
-        device/lge/geehrc/thermald-geehrc.conf:system/etc/thermald.conf
-
-PRODUCT_COPY_FILES += \
         device/lge/geehrc/init.geehrc.rc:root/init.geehrc.rc \
         device/lge/geehrc/init.geehrc.usb.rc:root/init.geehrc.usb.rc \
         device/lge/geehrc/fstab.geehrc:root/fstab.geehrc \
