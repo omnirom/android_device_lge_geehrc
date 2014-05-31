@@ -55,7 +55,7 @@ PRODUCT_COPY_FILES += \
         device/lge/geehrc/init.geehrc.rc:root/init.geehrc.rc \
         device/lge/geehrc/init.geehrc.usb.rc:root/init.geehrc.usb.rc \
         device/lge/geehrc/fstab.geehrc:root/fstab.geehrc \
-        device/lge/geehrc/twrp.fstab:root/etc/twrp.fstab \
+        device/lge/geehrc/twrp.fstab:recovery/etc/twrp.fstab \
         device/lge/geehrc/ueventd.geehrc.rc:root/ueventd.geehrc.rc \
         device/lge/geehrc/media_profiles.xml:system/etc/media_profiles.xml \
         device/lge/geehrc/media_codecs.xml:system/etc/media_codecs.xml
