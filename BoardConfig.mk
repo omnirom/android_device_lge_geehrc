@@ -71,7 +71,7 @@ BOARD_HOSTAPD_PRIVATE_LIB := lib_driver_cmd_$(BOARD_WLAN_DEVICE)
 WIFI_DRIVER_FW_PATH_STA := "sta"
 WIFI_DRIVER_FW_PATH_AP  := "ap"
 
-BOARD_EGL_CFG := device/lge/geehrc/egl.cfg
+BOARD_EGL_CFG := device/lge/geehrc/conf/egl.cfg
 
 #BOARD_USES_HGL := true
 #BOARD_USES_OVERLAY := true
@@ -85,7 +85,7 @@ NUM_FRAMEBUFFER_SURFACE_BUFFERS := 3
 TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
 #TARGET_RECOVERY_UI_LIB := librecovery_ui_geehrc
 
-TARGET_RECOVERY_FSTAB = device/lge/geehrc/fstab.geehrc
+TARGET_RECOVERY_FSTAB = device/lge/geehrc/ramdisk/fstab.geehrc
 RECOVERY_FSTAB_VERSION = 2
 TARGET_USERIMAGES_USE_EXT4 := true
 BOARD_BOOTIMAGE_PARTITION_SIZE := 23068672 # 22M
